@@ -1,7 +1,8 @@
 
 import "./Todo.css"
+import { useState } from "react"
 export default function Todo(){
-
+  const [Todos , setTodos] = useState(['simple'])
     return(
            <div>
             <input type="text" placeholder="Add Tasks"  className="input"/><br /><br />
@@ -10,7 +11,11 @@ export default function Todo(){
             <hr />
             <h4>Todo Tasks List</h4>
             
-            <ul></ul>
+            <ul>
+                {Todos.map((todos)=>(
+                  <li>{todos}</li>
+                ))}
+            </ul>
 
            </div>
     )
